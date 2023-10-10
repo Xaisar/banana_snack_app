@@ -1,64 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-
-
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          backgroundColor: Color(0xff1AD443),
-          body: Stack(fit: StackFit.expand, children: <Widget>[
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10),
-                  child: Text(
-                    'Politeknik Negeri',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 25),
-                  child: Text(
-                    'Banyuwangi',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  width: Get.width * 0.6,
-                  height: Get.width * 0.6,
-                  child: Image.asset("assets/logo/logo.png"),
-                ),
-                // Text('Bank Sampah Digital',
-                //     style: TextStyle(
-                //         color: Colors.white,
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 24))
-              ],
-            ),
-          ])),
+    return  Scaffold(
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [Colors.blue, Colors.purple],
+        begin: Alignment.bottomLeft,
+        ), 
+        ),
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.edit,
+            size:80,
+            color: Colors.white,)
+          ],
+        ),
+
+
+      ),
     );
   }
 }

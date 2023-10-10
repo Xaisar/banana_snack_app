@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    // return GetMaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: HomePetugasView(),
-    // );
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
     return FutureBuilder(
       future: Future.delayed(Duration(seconds: 3)),
       builder: (context, snapshot) {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         } else {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "Bank Sampah Digital",
+            title: "Banana Snack",
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
           );
